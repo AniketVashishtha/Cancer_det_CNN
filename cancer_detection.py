@@ -85,7 +85,7 @@ os.makedirs(root_dir +'/val' + negCls)
 os.makedirs(root_dir +'/test' + posCls)
 os.makedirs(root_dir +'/test' + negCls)
 
-# Creating partitions of the data after shuffeling
+
 currentCls = posCls
 src = "train_sep"+currentCls # Folder to copy images from
 
@@ -169,33 +169,6 @@ for parent, dirnames, filenames in os.walk('/train_sep/train'):
     for img in filenames:
         if not(img == Image.open(fn)):
             os.remove(os.path.join(parent, fn))
-#########CNN MODEL####################################
-#print("Creating Neural Network")
-##Model
-#classifier = Sequential()
-##layer1
-#classifier.add(Conv2D(32, (3, 3), input_shape = (224, 224 , 3), activation = 'relu'))
-#classifier.add(MaxPooling2D(pool_size = (2, 2)))
-#classifier.add(Dropout(p = 0.1))
-##layer2
-#classifier.add(Conv2D(32, (3, 3), activation = 'relu'))
-#classifier.add(MaxPooling2D(pool_size = (2, 2)))
-#classifier.add(Dropout(p = 0.1))
-#
-##final
-#classifier.add(Flatten())
-#classifier.add(Dense(units = 128, activation = 'relu'))
-#classifier.add(Dense(units = 1, activation = 'softmax'))
-#
-#classifier.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = ['accuracy'])
-#
-#
-#print("Start training")
-#classifier.fit_generator(train_generator,
-#                         steps_per_epoch = 8000,
-#                         epochs = 10,
-#                         validation_data = test_generator,
-#                         validation_steps = 2000)
 
 ########## TRANSFER LEARNING ##################################
 print("starting transfer learning")
