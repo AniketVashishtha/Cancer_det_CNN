@@ -20,17 +20,6 @@ from PIL import Image
 import sys
 from glob import glob
 
-#code to remove forst 150000 images in train directory
-#for roots, dirs, filenames in os.walk('/Users/vidushi/Downloads/histopathologic-cancer-detection/train'):
-#    for fn in filenames[:150000]:
-#        try:
-#            os.remove(os.path.join(roots, fn))
-#            print("file removed")
-#        except:
-#            print("unable to remove file")
-
-
-    
 #Preprocess
 def append_ext(fn):
     return fn+".tif"
